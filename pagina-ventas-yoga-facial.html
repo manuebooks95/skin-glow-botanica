@@ -1,0 +1,1425 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skin Glow Botánica — Yoga Facial para un Rostro Firme y Luminoso</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <style>
+    /* ── Reset & Base ── */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Inter', sans-serif;
+      background: #FDFAF5;
+      color: #2D2A25;
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    /* ── Typography ── */
+    h1, h2, h3 { font-family: 'Cormorant Garamond', serif; font-weight: 600; line-height: 1.2; }
+    h1 { font-size: clamp(2rem, 5vw, 3.6rem); }
+    h2 { font-size: clamp(1.7rem, 3.5vw, 2.7rem); }
+    h3 { font-size: clamp(1.1rem, 2.5vw, 1.5rem); }
+    p  { font-size: 1.05rem; }
+
+    /* ── Color Tokens ── */
+    :root {
+      --cream:      #FDFAF5;
+      --parchment:  #F5EFE0;
+      --sage:       #7A9E7E;
+      --sage-dark:  #4E7253;
+      --sage-light: #C8DCCA;
+      --gold:       #C9A84C;
+      --gold-light: #F0DFA0;
+      --bark:       #6B4F3A;
+      --text:       #2D2A25;
+      --text-soft:  #6B6558;
+      --white:      #FFFFFF;
+    }
+
+    /* ── Layout ── */
+    .container       { max-width: 760px; margin: 0 auto; padding: 0 24px; }
+    .container--wide { max-width: 1020px; margin: 0 auto; padding: 0 24px; }
+    section { padding: 72px 0; }
+
+    /* ── Announcement Bar ── */
+    .announcement {
+      background: var(--sage-dark);
+      color: var(--white);
+      text-align: center;
+      padding: 10px 24px;
+      font-size: 0.82rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+    .announcement span { color: var(--gold-light); font-weight: 700; }
+
+    /* ── HERO ── */
+    .hero {
+      background: linear-gradient(160deg, #EEF4EE 0%, #FDFAF5 55%, #F9F0E0 100%);
+      padding: 72px 0 64px;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; top: -60px; right: -80px;
+      width: 340px; height: 340px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(122,158,126,0.15) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    .hero::after {
+      content: '';
+      position: absolute; bottom: -40px; left: -60px;
+      width: 260px; height: 260px; border-radius: 50%;
+      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
+      pointer-events: none;
+    }
+    /* Two-column hero layout */
+    .hero-inner {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      gap: 56px;
+      align-items: center;
+    }
+    @media (max-width: 820px) {
+      .hero-inner {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+      .hero-mockup-col { display: flex; justify-content: center; }
+      .hero-social { justify-content: center; }
+    }
+    .hero-badge {
+      display: inline-block;
+      background: var(--sage-light);
+      color: var(--sage-dark);
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 6px 18px;
+      border-radius: 100px;
+      margin-bottom: 24px;
+      font-weight: 500;
+    }
+    .hero-content h1 { color: var(--bark); max-width: 580px; margin: 0 0 20px; }
+    .hero-content h1 span { color: var(--sage-dark); }
+    .hero-sub {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic;
+      font-size: 1.25rem;
+      color: var(--text-soft);
+      max-width: 500px;
+      margin: 0 0 32px;
+    }
+    .hero-social {
+      display: flex; align-items: center;
+      gap: 12px; margin-bottom: 32px;
+    }
+    .hero-avatars { display: flex; }
+    .hero-avatars span {
+      width: 36px; height: 36px; border-radius: 50%;
+      border: 2px solid var(--white);
+      background: var(--sage-light);
+      display: flex; align-items: center; justify-content: center;
+      font-size: 0.7rem; font-weight: 600; color: var(--sage-dark);
+      margin-left: -8px;
+    }
+    .hero-avatars span:first-child { margin-left: 0; }
+    .hero-social p { font-size: 0.88rem; color: var(--text-soft); }
+    .hero-social strong { color: var(--sage-dark); }
+
+    /* Hero mockup column — tablet más compacto */
+    .hero-mockup-col .tablet-wrap {
+      filter: drop-shadow(0 32px 64px rgba(0,0,0,0.25));
+    }
+    .hero-mockup-col .tablet {
+      width: 300px;
+      height: 420px;
+    }
+
+    /* ── Divider ── */
+    .divider-leaf {
+      text-align: center; padding: 8px 0;
+      color: var(--sage); font-size: 1.4rem;
+      letter-spacing: 12px; opacity: 0.55;
+    }
+
+    /* ── CTA Buttons ── */
+    .btn-primary {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--sage-dark) 0%, var(--sage) 100%);
+      color: var(--white);
+      font-family: 'Inter', sans-serif;
+      font-size: 1rem; font-weight: 600;
+      padding: 18px 44px; border-radius: 100px;
+      text-decoration: none; letter-spacing: 0.02em;
+      box-shadow: 0 8px 28px rgba(78,114,83,0.35);
+      transition: transform 0.2s, box-shadow 0.2s;
+      cursor: pointer; border: none;
+    }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 36px rgba(78,114,83,0.42); }
+    .btn-gold {
+      background: linear-gradient(135deg, #B8900E 0%, var(--gold) 100%);
+      box-shadow: 0 8px 28px rgba(201,168,76,0.4);
+    }
+    .btn-gold:hover { box-shadow: 0 12px 36px rgba(201,168,76,0.5); }
+    .cta-guarantee { font-size: 0.82rem; color: var(--text-soft); margin-top: 12px; display: block; }
+
+    /* ── Problema ── */
+    .problema { background: var(--parchment); }
+    .problema p + p { margin-top: 16px; }
+    .intro-label {
+      font-family: 'Cormorant Garamond', serif;
+      font-style: italic; font-size: 1.25rem;
+      color: var(--sage-dark); margin-bottom: 24px; display: block;
+    }
+
+    /* ── Agitar ── */
+    .agitar { background: var(--cream); }
+    .agitar blockquote {
+      border-left: 3px solid var(--gold);
+      padding-left: 24px; margin: 32px 0;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem; color: var(--bark); font-style: italic;
+    }
+
+    /* ── Solución intro ── */
+    .solucion-intro {
+      background: linear-gradient(135deg, #EEF4EE 0%, #F5EFE0 100%);
+      text-align: center;
+    }
+    .solucion-intro h2 { color: var(--sage-dark); }
+    .product-name {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      font-weight: 300; letter-spacing: 0.04em;
+      color: var(--bark); margin: 12px 0 8px;
+    }
+    .product-tagline {
+      font-size: 1.1rem; color: var(--text-soft);
+      max-width: 480px; margin: 0 auto 40px;
+    }
+
+    /* ══════════════════════════════════
+       TABLET MOCKUP
+    ══════════════════════════════════ */
+    .tablet-wrap {
+      display: inline-block;
+      position: relative;
+      filter: drop-shadow(0 40px 80px rgba(0,0,0,0.22));
+    }
+    /* Tablet outer shell */
+    .tablet {
+      width: 380px;
+      height: 520px;
+      background: #1C1C1E;
+      border-radius: 28px;
+      padding: 18px 14px;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    /* Camera pill */
+    .tablet::before {
+      content: '';
+      position: absolute;
+      top: 10px; left: 50%; transform: translateX(-50%);
+      width: 36px; height: 5px;
+      background: #3A3A3C;
+      border-radius: 100px;
+    }
+    /* Home bar */
+    .tablet::after {
+      content: '';
+      position: absolute;
+      bottom: 8px; left: 50%; transform: translateX(-50%);
+      width: 60px; height: 4px;
+      background: #3A3A3C;
+      border-radius: 100px;
+    }
+    /* Screen */
+    .tablet-screen {
+      width: 100%;
+      flex: 1;
+      border-radius: 16px;
+      overflow: hidden;
+      background: linear-gradient(150deg, #2D5230 0%, #4E7253 35%, #7A9E7E 70%, #C8DCCA 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 28px 24px;
+      position: relative;
+    }
+    /* Decorative circles on screen */
+    .tablet-screen::before {
+      content: '';
+      position: absolute;
+      top: -30px; right: -30px;
+      width: 130px; height: 130px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.07);
+    }
+    .tablet-screen::after {
+      content: '';
+      position: absolute;
+      bottom: -20px; left: -20px;
+      width: 100px; height: 100px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.06);
+    }
+    .ebook-badge {
+      font-size: 0.65rem;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: rgba(255,255,255,0.7);
+      background: rgba(255,255,255,0.12);
+      padding: 4px 14px;
+      border-radius: 100px;
+      margin-bottom: 16px;
+    }
+    .ebook-leaf { font-size: 2.2rem; margin-bottom: 10px; }
+    .ebook-title {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.55rem;
+      font-weight: 600;
+      color: var(--white);
+      text-align: center;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+    .ebook-subtitle {
+      font-size: 0.72rem;
+      color: rgba(255,255,255,0.7);
+      text-align: center;
+      letter-spacing: 0.05em;
+      margin-bottom: 20px;
+      max-width: 240px;
+    }
+    .ebook-divider {
+      width: 40px; height: 1px;
+      background: rgba(255,255,255,0.35);
+      margin: 0 auto 16px;
+    }
+    .ebook-author {
+      font-size: 0.7rem;
+      color: rgba(255,255,255,0.65);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .ebook-brand {
+      position: absolute;
+      bottom: 16px;
+      font-size: 0.62rem;
+      color: rgba(255,255,255,0.45);
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+    /* Side buttons on tablet */
+    .tablet-btn-vol {
+      position: absolute;
+      left: -5px; top: 90px;
+      width: 4px; height: 28px;
+      background: #3A3A3C;
+      border-radius: 2px;
+      box-shadow: 0 34px 0 #3A3A3C;
+    }
+    .tablet-btn-power {
+      position: absolute;
+      right: -5px; top: 100px;
+      width: 4px; height: 40px;
+      background: #3A3A3C;
+      border-radius: 2px;
+    }
+
+    /* ── Beneficios ── */
+    .beneficios { background: var(--parchment); }
+    .beneficios h2 { text-align: center; margin-bottom: 12px; color: var(--bark); }
+    .section-intro { text-align: center; color: var(--text-soft); margin-bottom: 48px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .benefits-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px; margin-bottom: 52px;
+    }
+    @media (max-width: 600px) { .benefits-grid { grid-template-columns: 1fr; } }
+    .benefit-card {
+      background: var(--white);
+      border: 1px solid var(--sage-light);
+      border-radius: 16px; padding: 28px 24px;
+    }
+    .benefit-card .icon { font-size: 1.7rem; margin-bottom: 12px; display: block; }
+    .benefit-card h3 { color: var(--sage-dark); margin-bottom: 8px; font-size: 1.05rem; }
+    .benefit-card p { font-size: 0.95rem; color: var(--text-soft); }
+
+    /* ── Qué Incluye ── */
+    .que-incluye { background: var(--cream); }
+    .que-incluye h2 { text-align: center; color: var(--bark); margin-bottom: 48px; }
+    .modulos-list { list-style: none; }
+    .modulos-list li {
+      display: flex; gap: 20px; align-items: flex-start;
+      padding: 20px 0;
+      border-bottom: 1px solid rgba(122,158,126,0.2);
+    }
+    .modulos-list li:last-child { border-bottom: none; }
+    .modulo-num {
+      flex-shrink: 0; width: 40px; height: 40px;
+      background: var(--sage-dark); color: var(--white);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      font-weight: 600; font-size: 0.9rem;
+    }
+    .modulo-content h3 { font-size: 1.05rem; color: var(--bark); margin-bottom: 4px; }
+    .modulo-content p  { font-size: 0.92rem; color: var(--text-soft); }
+
+    /* ══════════════════════════════════
+       BONOS
+    ══════════════════════════════════ */
+    .bonos-section { background: var(--parchment); }
+    .bonos-section h2 { text-align: center; color: var(--bark); margin-bottom: 12px; }
+    .bonos-section .sub { text-align: center; color: var(--text-soft); margin-bottom: 48px; }
+    .bonos-grid { display: flex; flex-direction: column; gap: 20px; }
+    .bono-card {
+      background: var(--white);
+      border: 1.5px solid var(--sage-light);
+      border-radius: 18px;
+      padding: 28px 28px;
+      display: flex; gap: 24px; align-items: flex-start;
+      position: relative;
+      overflow: hidden;
+    }
+    .bono-card::before {
+      content: '';
+      position: absolute; top: 0; left: 0;
+      width: 5px; height: 100%;
+      background: linear-gradient(to bottom, var(--sage-dark), var(--sage));
+    }
+    .bono-icon {
+      flex-shrink: 0;
+      font-size: 2.4rem;
+      line-height: 1;
+    }
+    .bono-body { flex: 1; }
+    .bono-label {
+      font-size: 0.75rem; font-weight: 700;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--sage-dark); margin-bottom: 6px;
+    }
+    .bono-body h3 { color: var(--bark); font-size: 1.15rem; margin-bottom: 6px; }
+    .bono-body p  { font-size: 0.93rem; color: var(--text-soft); margin-bottom: 12px; }
+    .bono-price-row {
+      display: flex; align-items: center; gap: 12px; flex-wrap: wrap;
+    }
+    .bono-price-was {
+      font-size: 0.9rem; color: var(--text-soft);
+      text-decoration: line-through; opacity: 0.7;
+    }
+    .bono-price-free {
+      background: var(--sage-dark);
+      color: var(--white);
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.06em;
+      padding: 4px 14px; border-radius: 100px;
+      text-transform: uppercase;
+    }
+    .bono-total-box {
+      background: linear-gradient(135deg, #EEF4EE, #F5EFE0);
+      border: 1.5px dashed var(--sage);
+      border-radius: 14px;
+      padding: 20px 28px;
+      display: flex; justify-content: space-between; align-items: center;
+      margin-top: 8px; flex-wrap: wrap; gap: 12px;
+    }
+    .bono-total-box .label { font-size: 0.95rem; color: var(--text-soft); }
+    .bono-total-box .value {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.8rem; color: var(--sage-dark); font-weight: 600;
+    }
+    .bono-total-box .value span {
+      text-decoration: line-through; opacity: 0.45; font-size: 1.1rem; margin-right: 8px;
+    }
+
+    /* ── Testimonios ── */
+    .testimonios { background: var(--cream); }
+    .testimonios h2 { text-align: center; color: var(--bark); margin-bottom: 12px; }
+    .testimonios .sub { text-align: center; color: var(--text-soft); margin-bottom: 48px; font-size: 0.9rem; }
+    .testimonials-grid {
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 24px;
+    }
+    @media (max-width: 600px) { .testimonials-grid { grid-template-columns: 1fr; } }
+    .testimonial-card {
+      background: var(--white);
+      border: 1px solid var(--sage-light);
+      border-radius: 16px; padding: 28px;
+    }
+    .testimonial-card .stars { color: var(--gold); font-size: 1rem; margin-bottom: 14px; }
+    .testimonial-card blockquote {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.1rem; font-style: italic;
+      color: var(--text); margin-bottom: 20px; line-height: 1.55;
+    }
+    .testimonial-author-row {
+      display: flex; align-items: center; gap: 14px;
+    }
+    .testimonial-photo {
+      width: 52px; height: 52px; border-radius: 50%;
+      object-fit: cover; object-position: center top;
+      border: 2px solid var(--sage-light);
+      flex-shrink: 0;
+      background: var(--sage-light);
+    }
+    /* Fallback avatar cuando la foto no carga */
+    .testimonial-avatar-fallback {
+      width: 52px; height: 52px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--sage-dark), var(--sage));
+      color: var(--white);
+      font-weight: 700; font-size: 0.9rem;
+      display: flex; align-items: center; justify-content: center;
+      border: 2px solid var(--sage-light);
+      flex-shrink: 0;
+      letter-spacing: 0.03em;
+    }
+    .testimonial-author strong { font-size: 0.9rem; color: var(--bark); display: block; }
+    .testimonial-author span   { font-size: 0.8rem; color: var(--text-soft); }
+    .testimonial-result {
+      display: inline-block;
+      background: var(--sage-light); color: var(--sage-dark);
+      font-size: 0.75rem; font-weight: 600;
+      padding: 4px 12px; border-radius: 100px;
+      margin-top: 12px;
+    }
+    .testimonial-featured {
+      grid-column: 1 / -1;
+      background: linear-gradient(135deg, #EEF4EE, #F5EFE0);
+      border-color: var(--sage);
+    }
+    .disclaimer-testimonios {
+      font-size: 0.78rem; color: var(--text-soft);
+      text-align: center; margin-top: 28px;
+      font-style: italic; opacity: 0.7;
+    }
+
+    /* ── Para Quién ── */
+    .para-quien { background: var(--parchment); }
+    .para-quien h2 { text-align: center; color: var(--bark); margin-bottom: 40px; }
+    .para-quien-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+    @media (max-width: 600px) { .para-quien-grid { grid-template-columns: 1fr; } }
+    .check-list, .x-list { list-style: none; }
+    .check-list li, .x-list li {
+      padding: 10px 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.08);
+      font-size: 0.97rem;
+      display: flex; gap: 10px; align-items: flex-start;
+    }
+    .check-list li:last-child, .x-list li:last-child { border-bottom: none; }
+    .check-list li::before { content: '✓'; color: var(--sage-dark); font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .x-list li::before    { content: '✗'; color: #C0392B; font-weight: 700; flex-shrink: 0; margin-top: 2px; }
+    .para-quien-col h3 {
+      color: var(--sage-dark); margin-bottom: 16px;
+      font-family: 'Inter', sans-serif; font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em; font-size: 0.85rem;
+    }
+
+    /* ════════════════════════════════════
+       PRECIO — con precio tachado y oferta
+    ════════════════════════════════════ */
+    .precio { background: linear-gradient(135deg, #EEF4EE 0%, #F5EFE0 100%); text-align: center; }
+    .precio h2 { color: var(--bark); margin-bottom: 40px; }
+    .offer-badge {
+      display: inline-block;
+      background: #E74C3C; color: var(--white);
+      font-size: 0.8rem; font-weight: 700;
+      letter-spacing: 0.06em; text-transform: uppercase;
+      padding: 6px 18px; border-radius: 100px;
+      margin-bottom: 20px;
+    }
+    .price-box {
+      background: var(--white);
+      border: 2px solid var(--sage);
+      border-radius: 24px;
+      padding: 48px 40px;
+      max-width: 520px; margin: 0 auto 40px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.07);
+    }
+    /* Anclaje comparativo */
+    .price-comparison { display: flex; flex-direction: column; gap: 6px; margin-bottom: 24px; }
+    .price-item {
+      display: flex; justify-content: space-between; align-items: center;
+      font-size: 0.9rem; color: var(--text-soft);
+      padding: 6px 0; border-bottom: 1px solid var(--parchment);
+    }
+    .price-item:last-child { border-bottom: none; }
+    .price-item .strike { text-decoration: line-through; opacity: 0.5; }
+
+    /* Precio principal con tachado */
+    .price-main {
+      margin: 24px 0; padding: 24px 0;
+      border-top: 2px solid var(--sage-light);
+      border-bottom: 2px solid var(--sage-light);
+    }
+    .price-main .label { font-size: 0.83rem; color: var(--text-soft); text-transform: uppercase; letter-spacing: 0.08em; }
+    .price-was-row {
+      display: flex; align-items: center; justify-content: center;
+      gap: 16px; margin: 10px 0 4px;
+    }
+    .price-was {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem; color: var(--text-soft);
+      text-decoration: line-through; opacity: 0.5;
+    }
+    .price-discount-badge {
+      background: #E74C3C; color: var(--white);
+      font-size: 0.75rem; font-weight: 700;
+      padding: 4px 10px; border-radius: 100px;
+    }
+    .price-now {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 4.5rem; font-weight: 600;
+      color: var(--sage-dark); line-height: 1;
+    }
+    .price-now .currency { font-size: 2rem; vertical-align: super; }
+    .price-per-day { font-size: 0.88rem; color: var(--text-soft); margin-top: 6px; }
+
+    /* Valor total incluido */
+    .price-value-stack {
+      background: var(--parchment);
+      border-radius: 12px;
+      padding: 16px 20px;
+      margin: 20px 0;
+      text-align: left;
+    }
+    .price-value-stack .row {
+      display: flex; justify-content: space-between;
+      font-size: 0.9rem; padding: 5px 0;
+      border-bottom: 1px dashed rgba(0,0,0,0.08);
+    }
+    .price-value-stack .row:last-child { border-bottom: none; font-weight: 600; font-size: 0.95rem; }
+    .price-value-stack .row .green { color: var(--sage-dark); font-weight: 700; }
+    .price-value-stack .row .strike { text-decoration: line-through; opacity: 0.45; }
+
+    .price-includes { list-style: none; margin: 20px 0; text-align: left; }
+    .price-includes li {
+      padding: 7px 0; font-size: 0.93rem;
+      display: flex; gap: 10px; align-items: center;
+      border-bottom: 1px solid var(--parchment);
+    }
+    .price-includes li::before { content: '✓'; color: var(--sage-dark); font-weight: 700; flex-shrink: 0; }
+
+    /* ── Garantía ── */
+    .garantia { background: var(--cream); text-align: center; }
+    .garantia-box {
+      background: var(--parchment);
+      border: 2px dashed var(--gold);
+      border-radius: 20px; padding: 48px 40px;
+      max-width: 600px; margin: 0 auto;
+    }
+    .garantia-seal { font-size: 3rem; margin-bottom: 16px; }
+    .garantia-box h3 { font-size: 1.8rem; color: var(--bark); margin-bottom: 20px; }
+    .garantia-box p  { font-size: 1rem; color: var(--text-soft); }
+
+    /* ── FAQ ── */
+    .faq { background: var(--parchment); }
+    .faq h2 { text-align: center; color: var(--bark); margin-bottom: 48px; }
+    .faq-item { border-bottom: 1px solid rgba(122,158,126,0.25); padding: 20px 0; }
+    .faq-item:last-child { border-bottom: none; }
+    .faq-question {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.2rem; color: var(--bark);
+      margin-bottom: 10px; font-weight: 600;
+    }
+    .faq-answer { font-size: 0.97rem; color: var(--text-soft); }
+
+    /* ── Urgencia ── */
+    .urgencia {
+      background: var(--sage-dark); color: var(--white);
+      text-align: center; padding: 72px 24px;
+    }
+    .urgencia h2 { color: var(--gold-light); margin-bottom: 20px; }
+    .urgencia p  { color: rgba(255,255,255,0.8); max-width: 500px; margin: 0 auto 36px; }
+
+    /* ── Creadora ── */
+    .creador { background: var(--cream); }
+    .creador-inner { display: flex; gap: 48px; align-items: flex-start; }
+    @media (max-width: 600px) { .creador-inner { flex-direction: column; } }
+    .creador-photo {
+      flex-shrink: 0; width: 120px; height: 120px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--sage-light), var(--gold-light));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 3.5rem; border: 3px solid var(--sage);
+    }
+    .creador-bio h3 { color: var(--bark); margin-bottom: 8px; }
+    .creador-bio .title {
+      font-size: 0.83rem; color: var(--sage-dark); font-weight: 600;
+      text-transform: uppercase; letter-spacing: 0.06em; margin-bottom: 12px;
+    }
+    .creador-bio p + p { margin-top: 12px; }
+
+    /* ── P.S. ── */
+    .ps { background: var(--parchment); text-align: center; padding: 52px 24px; }
+    .ps p {
+      max-width: 620px; margin: 0 auto;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.25rem; font-style: italic; color: var(--bark);
+    }
+    .ps strong { color: var(--sage-dark); font-style: normal; }
+
+    /* ── Footer ── */
+    footer {
+      background: var(--text); color: rgba(255,255,255,0.45);
+      text-align: center; padding: 28px 24px; font-size: 0.82rem;
+    }
+    footer a { color: rgba(255,255,255,0.4); text-decoration: none; }
+
+    /* ── Helpers ── */
+    .text-center { text-align: center; }
+    .mt-8  { margin-top: 8px; }
+    .mt-16 { margin-top: 16px; }
+    .mt-24 { margin-top: 24px; }
+    .mt-40 { margin-top: 40px; }
+    .mb-8  { margin-bottom: 8px; }
+    .mb-24 { margin-bottom: 24px; }
+  </style>
+</head>
+<body>
+
+<!-- ── Announcement ── -->
+<div class="announcement">
+  Oferta de lanzamiento · <span>49% de descuento</span> · Precio sube pronto · Acceso inmediato al comprar
+</div>
+
+<!-- ══════════════════════════════════════
+     HERO — dos columnas: texto + mockup tablet
+══════════════════════════════════════ -->
+<section class="hero">
+  <div class="container--wide">
+    <div class="hero-inner">
+
+      <!-- Columna izquierda: copy -->
+      <div class="hero-content">
+        <span class="hero-badge">Ebook Digital · Yoga Facial · Método Botánico</span>
+
+        <h1>
+          El Yoga Facial que Devuelve <span>Firmeza y Luminosidad</span>
+          a Tu Rostro — Sin Cremas Caras ni Procedimientos
+        </h1>
+
+        <p class="hero-sub">
+          Un programa de práctica guiada de 21 días que ejercita los músculos
+          de tu cara para tonificar, definir y revitalizar tu piel desde adentro.
+        </p>
+
+        <div class="hero-social">
+          <div class="hero-avatars">
+            <span>A</span><span>M</span><span>C</span><span>S</span><span>R</span>
+          </div>
+          <p><strong>+1,200 mujeres</strong> ya practican este método</p>
+        </div>
+
+        <a href="#precio" class="btn-primary">
+          Sí — Quiero Empezar Mi Práctica de Yoga Facial
+        </a>
+        <span class="cta-guarantee">Acceso inmediato · $18.99 · Garantía de satisfacción 30 días</span>
+      </div>
+
+      <!-- Columna derecha: mockup tablet -->
+      <div class="hero-mockup-col">
+        <div class="tablet-wrap">
+          <div class="tablet">
+            <div class="tablet-btn-vol"></div>
+            <div class="tablet-btn-power"></div>
+            <div class="tablet-screen">
+              <span class="ebook-badge">Guía Digital · PDF</span>
+              <div class="ebook-leaf">🌿</div>
+              <div class="ebook-title" style="font-size:1.25rem; line-height:1.25; max-width:220px;">
+                Yoga Facial para un Rostro Firme, Tonificado y Luminoso
+              </div>
+            </div>
+          </div>
+        </div>
+        <p style="text-align:center; font-size:0.8rem; color:var(--text-soft); margin-top:16px;">
+          Descarga inmediata · PDF · Todos los dispositivos
+        </p>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     PROBLEMA
+══════════════════════════════════════ -->
+<section class="problema">
+  <div class="container">
+    <span class="intro-label">Reconoce esto…</span>
+
+    <p>
+      Te levantas por la mañana, te miras al espejo y hay algo que no cuadra.
+      Los pómulos que antes te definían el rostro parecen haberse aplanado.
+      La línea del mentón —esa que era tan marcada— ahora se funde con el cuello.
+      Los párpados caídos hacen que parezcas cansada aunque hayas dormido ocho horas.
+    </p>
+
+    <p class="mt-16">
+      Has comprado suero antiedad de $80. Has probado la mascarilla tensora que
+      tanto salía en Instagram. Tienes el contorno de ojos, el aceite de rosa mosqueta,
+      la crema de retinol. Tu baño es una farmacia botánica — y sin embargo, cada
+      mañana el reflejo sigue siendo el mismo.
+    </p>
+
+    <p class="mt-16">
+      Y lo peor no es el dinero gastado. Es esa voz interna que susurra:
+      <em>"Esto es solo la edad. No hay nada que hacer."</em>
+    </p>
+
+    <p class="mt-16">
+      Pero ¿y si esa voz estuviera equivocada?
+    </p>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     AGITAR
+══════════════════════════════════════ -->
+<section class="agitar">
+  <div class="container">
+    <h2>Lo que nadie te dice sobre las cremas antiedad</h2>
+
+    <p class="mt-24">
+      Las cremas trabajan en la superficie. Hidratan. A veces rellenan temporalmente.
+      Pero ninguna puede tonificar un músculo que está flácido.
+      Y ahí está la raíz real del problema.
+    </p>
+
+    <p class="mt-16">
+      Tu rostro tiene más de <strong>40 músculos</strong>. Con los años —y con el
+      estrés, las horas de pantalla, los gestos repetidos— esos músculos pierden
+      tono, se acortan o simplemente dejan de trabajar con la misma intensidad.
+      El resultado visible: pérdida de contorno en mandíbula, párpados con peso,
+      surcos más marcados.
+    </p>
+
+    <blockquote>
+      "La flacidez facial no es inevitable ni permanente.
+       Es músculo sin ejercicio — igual que el del resto del cuerpo."
+    </blockquote>
+
+    <p>
+      Si sigues dependiendo solo de productos tópicos, en tres años el espejo
+      mostrará exactamente la misma historia, solo más avanzada. Y para entonces
+      habrás gastado cientos en cremas que nunca pudieron llegar hasta donde
+      está el problema real.
+    </p>
+
+    <p class="mt-16">
+      La alternativa no es el bótox. Ni el hilo tensor. Es algo que llevas
+      contigo desde el primer día y que jamás te han enseñado a usar:
+      <strong>los propios músculos de tu cara.</strong>
+    </p>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     SOLUCIÓN INTRO
+══════════════════════════════════════ -->
+<section class="solucion-intro">
+  <div class="container">
+    <h2>¿Y si pudieras hacer gimnasia para tu rostro<br/>desde la comodidad de tu casa?</h2>
+
+    <p class="mt-16" style="text-align:center; color:var(--text-soft); max-width:520px; margin-left:auto; margin-right:auto;">
+      Eso es exactamente lo que hace el yoga facial: ejercitar, tonificar
+      y relajar los músculos faciales para que tu rostro recupere estructura
+      y luminosidad — sin aguja, sin bisturí, sin crema costosa.
+    </p>
+
+    <div class="mt-40">
+      <p style="text-align:center; color:var(--text-soft); font-size:0.83rem; text-transform:uppercase; letter-spacing:0.1em;">Presentando</p>
+      <div class="product-name">Skin Glow Botánica</div>
+      <p class="product-tagline">
+        El ebook de yoga facial con rutinas guiadas de 21 días
+        para tonificar y definir tu rostro — 100% natural, en casa.
+      </p>
+      <div class="text-center mt-24">
+        <a href="#precio" class="btn-primary">
+          Sí — Quiero Acceder al Método Ahora
+        </a>
+        <span class="cta-guarantee">Acceso inmediato · Solo $18.99</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     BENEFICIOS
+══════════════════════════════════════ -->
+<section class="beneficios">
+  <div class="container">
+    <h2>Qué trabaja este programa por tu piel</h2>
+    <p class="section-intro">
+      Cada rutina está diseñada para ejercitar zonas específicas del rostro,
+      apoyando el tono muscular y la circulación de manera natural.
+    </p>
+
+    <div class="benefits-grid">
+      <div class="benefit-card">
+        <span class="icon">✦</span>
+        <h3>Contorno de mandíbula y mentón</h3>
+        <p>Rutinas de tonificación del cuello y mandíbula diseñadas para trabajar
+        la firmeza del óvalo facial de forma natural.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="icon">🌿</span>
+        <h3>Zona de ojos y párpados</h3>
+        <p>Secuencias específicas para el músculo orbicular que ayudan a reducir
+        la pesadez de la mirada y ejercitar la zona palpebral.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="icon">✦</span>
+        <h3>Zona media del rostro</h3>
+        <p>Ejercicios para el músculo cigomático mayor orientados a fortalecer
+        la zona de los pómulos y mejorar la estructura facial.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="icon">🌿</span>
+        <h3>Circulación y luminosidad</h3>
+        <p>El masaje y las posturas activan la microcirculación, favoreciendo
+        una mejor oxigenación de la piel desde dentro.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="icon">✦</span>
+        <h3>Frente y expresión</h3>
+        <p>Técnicas de relajación muscular para la frente y el entrecejo
+        que ayudan a liberar tensión acumulada.</p>
+      </div>
+      <div class="benefit-card">
+        <span class="icon">🌿</span>
+        <h3>Un ritual que disfrutes cada día</h3>
+        <p>10 minutos de práctica consciente diseñados para ser sostenibles,
+        agradables y fáciles de mantener en el tiempo.</p>
+      </div>
+    </div>
+
+    <div class="text-center">
+      <a href="#precio" class="btn-primary">
+        Quiero Acceder al Programa — $18.99
+      </a>
+      <span class="cta-guarantee">Garantía de satisfacción de 30 días</span>
+    </div>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     QUÉ INCLUYE — Módulos
+══════════════════════════════════════ -->
+<section class="que-incluye">
+  <div class="container">
+    <h2>Lo que encuentras dentro del ebook</h2>
+
+    <ul class="modulos-list">
+      <li>
+        <div class="modulo-num">1</div>
+        <div class="modulo-content">
+          <h3>La Ciencia Detrás del Yoga Facial</h3>
+          <p>Por qué el movimiento consciente impacta la musculatura facial y
+          cómo estructurar tu práctica de 21 días para ser constante.</p>
+        </div>
+      </li>
+      <li>
+        <div class="modulo-num">2</div>
+        <div class="modulo-content">
+          <h3>Semana 1 — Activación y Circulación</h3>
+          <p>Ejercicios iniciales para despertar la musculatura facial y activar
+          la microcirculación. Perfectos para empezar desde cero.</p>
+        </div>
+      </li>
+      <li>
+        <div class="modulo-num">3</div>
+        <div class="modulo-content">
+          <h3>Semana 2 — Tonificación y Estructura</h3>
+          <p>Rutinas de mayor intensidad con técnicas isométricas para trabajar
+          el contorno facial y la zona del cuello.</p>
+        </div>
+      </li>
+      <li>
+        <div class="modulo-num">4</div>
+        <div class="modulo-content">
+          <h3>Semana 3 — Firmeza y Mantenimiento</h3>
+          <p>Secuencia avanzada de lifting + masaje botánico para consolidar
+          la práctica y convertirla en un hábito de por vida.</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     BONOS
+══════════════════════════════════════ -->
+<section class="bonos-section">
+  <div class="container">
+    <h2>Bonos incluidos 🎁</h2>
+    <p class="sub">Compra el ebook hoy y recibe estos dos recursos completamente gratis</p>
+
+    <div class="bonos-grid">
+
+      <!-- Bono 1 -->
+      <div class="bono-card">
+        <div class="bono-icon">📋</div>
+        <div class="bono-body">
+          <p class="bono-label">Bono #1</p>
+          <h3>Checklist de Seguimiento Diario</h3>
+          <p>
+            Tu control visual de los 21 días de práctica. Marca cada sesión completada,
+            anota tus observaciones y mantén la motivación alta sin perder ni un solo día.
+            Diseñado para imprimirse o usarse directamente en tu tablet.
+          </p>
+          <div class="bono-price-row">
+            <span class="bono-price-was">Valor: $12.00</span>
+            <span class="bono-price-free">Gratis hoy</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Bono 2 -->
+      <div class="bono-card">
+        <div class="bono-icon">🌱</div>
+        <div class="bono-body">
+          <p class="bono-label">Bono #2</p>
+          <h3>Guía de Constancia y Progreso</h3>
+          <p>
+            Tips prácticos y estrategias de motivación para mantener tu rutina de yoga facial
+            cuando la vida se complica. Incluye mini-rutinas express de 5 minutos para los
+            días que no tienes tiempo y técnicas para retomar la práctica si la interrumpes.
+          </p>
+          <div class="bono-price-row">
+            <span class="bono-price-was">Valor: $15.00</span>
+            <span class="bono-price-free">Gratis hoy</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Total de valor -->
+    <div class="bono-total-box mt-24">
+      <div>
+        <p class="label" style="font-weight:600; color:var(--bark);">Valor total del paquete completo</p>
+        <p style="font-size:0.85rem; color:var(--text-soft);">Ebook + Bono #1 + Bono #2</p>
+      </div>
+      <div class="value">
+        <span>$64.00</span> $18.99
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     TESTIMONIOS
+══════════════════════════════════════ -->
+<section class="testimonios">
+  <div class="container">
+    <h2>Lo que dicen las que ya practican el método</h2>
+    <p class="sub">Experiencias reales de mujeres reales — los resultados individuales pueden variar</p>
+
+    <div class="testimonials-grid mt-40">
+
+      <!-- Testimonial destacado (sin foto individual — texto principal) -->
+      <div class="testimonial-card testimonial-featured">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Llevaba dos años sintiéndome mayor de lo que soy. Empecé con el yoga facial
+          sin expectativas enormes y a las dos semanas mi marido me preguntó si me había
+          cortado el pelo porque me veía 'diferente, más fresca'. No me había cortado nada.
+          Ahora lo hago cada mañana como parte de mi rutina — no puedo imaginar el día sin él."
+        </blockquote>
+        <div class="testimonial-author-row">
+          <img src="foto-sofia.jpg" alt="Sofía M." class="testimonial-photo" onerror="this.style.display='none'" />
+          <div class="testimonial-author">
+            <strong>Sofía Martínez</strong>
+            <span>47 años · Madrid</span>
+          </div>
+        </div>
+        <span class="testimonial-result">Practica el método desde hace 3 meses</span>
+      </div>
+
+      <!-- Carmen -->
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Mis párpados caídos eran mi complejo. Después de practicar las rutinas del ebook
+          la diferencia en fotos es notable. Parezco más descansada y con la mirada más abierta."
+        </blockquote>
+        <div class="testimonial-author-row">
+          <img src="foto-carmen.jpg" alt="Carmen R." class="testimonial-photo" />
+          <div class="testimonial-author">
+            <strong>Carmen R.</strong>
+            <span>52 años · México DF</span>
+          </div>
+        </div>
+        <span class="testimonial-result">Párpados visiblemente más abiertos</span>
+      </div>
+
+      <!-- Lucía -->
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Gasté más de $400 en cremas antiedad el año pasado. Con $18.99 y este
+          programa conseguí más resultados en mi rutina que con todo ese año de productos.
+          Estoy en modo yoga facial para todo este año."
+        </blockquote>
+        <div class="testimonial-author-row">
+          <img src="foto-lucia.jpg" alt="Lucía P." class="testimonial-photo" />
+          <div class="testimonial-author">
+            <strong>Lucía P.</strong>
+            <span>44 años · Buenos Aires</span>
+          </div>
+        </div>
+        <span class="testimonial-result">Ahorro de $400+ en productos</span>
+      </div>
+
+      <!-- Ana -->
+      <div class="testimonial-card">
+        <div class="stars">★★★★★</div>
+        <blockquote>
+          "Pensé que era para personas muy disciplinadas. Pero son solo 10 minutos
+          y los ejercicios son tan claros que nunca me perdí un día. El checklist del
+          bono me ayudó mucho a mantenerme constante."
+        </blockquote>
+        <div class="testimonial-author-row">
+          <img src="foto-ana.jpg" alt="Ana G." class="testimonial-photo" />
+          <div class="testimonial-author">
+            <strong>Ana G.</strong>
+            <span>38 años · Bogotá</span>
+          </div>
+        </div>
+        <span class="testimonial-result">Completó los 21 días sin faltar uno</span>
+      </div>
+
+    </div>
+
+    <p class="disclaimer-testimonios">
+      * Los resultados individuales varían y dependen de la constancia en la práctica, las condiciones
+      individuales de cada persona y otros factores. Las experiencias compartidas son personales y no garantizan resultados idénticos.
+    </p>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     PARA QUIÉN ES
+══════════════════════════════════════ -->
+<section class="para-quien">
+  <div class="container">
+    <h2>¿Es este programa para ti?</h2>
+
+    <div class="para-quien-grid mt-40">
+      <div class="para-quien-col">
+        <h3>Es para ti si…</h3>
+        <ul class="check-list">
+          <li>Sientes que tu rostro ha perdido firmeza o definición</li>
+          <li>Quieres complementar tu rutina de cuidado con algo natural</li>
+          <li>Puedes dedicar 10 minutos diarios a practicar</li>
+          <li>Prefieres alternativas no invasivas y botánicas</li>
+          <li>Buscas una práctica sostenible a largo plazo</li>
+          <li>Quieres sentirte bien en tu piel a cualquier edad</li>
+        </ul>
+      </div>
+      <div class="para-quien-col">
+        <h3>No es para ti si…</h3>
+        <ul class="x-list">
+          <li>Buscas resultados sin ningún tipo de práctica</li>
+          <li>Tuviste cirugía facial reciente (consulta a tu médico)</li>
+          <li>No tienes disposición de ser constante los 21 días</li>
+          <li>Esperas que un ebook reemplace atención médica</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     PRECIO
+══════════════════════════════════════ -->
+<section class="precio" id="precio">
+  <div class="container">
+    <h2>Tu inversión en una práctica que dura toda la vida</h2>
+
+    <div class="text-center mb-24">
+      <span class="offer-badge">Oferta de Lanzamiento — 49% de Descuento</span>
+    </div>
+
+    <div class="price-box">
+
+      <!-- Anclaje comparativo -->
+      <div class="price-comparison">
+        <div class="price-item">
+          <span>Una sesión de mesoterapia facial</span>
+          <span class="strike">$250 – $400</span>
+        </div>
+        <div class="price-item">
+          <span>Kit mensual de cremas antiedad</span>
+          <span class="strike">$80 – $200 / mes</span>
+        </div>
+        <div class="price-item">
+          <span>Clase presencial de yoga facial</span>
+          <span class="strike">$50 – $80 / clase</span>
+        </div>
+      </div>
+
+      <!-- Precio principal -->
+      <div class="price-main">
+        <p class="label">Skin Glow Botánica — Acceso completo</p>
+        <div class="price-was-row">
+          <span class="price-was">$37.00</span>
+          <span class="price-discount-badge">49% OFF</span>
+        </div>
+        <div class="price-now"><span class="currency">$</span>18.99</div>
+        <p class="price-per-day">Menos de $0.90 al día · Pago único · Tuyo para siempre</p>
+      </div>
+
+      <!-- Stack de valor -->
+      <div class="price-value-stack">
+        <div class="row">
+          <span>Ebook Skin Glow Botánica (21 días)</span>
+          <span class="strike">$37.00</span>
+        </div>
+        <div class="row">
+          <span>Bono #1: Checklist de Seguimiento</span>
+          <span class="strike">$12.00</span>
+        </div>
+        <div class="row">
+          <span>Bono #2: Guía de Constancia y Progreso</span>
+          <span class="strike">$15.00</span>
+        </div>
+        <div class="row">
+          <span>Valor total del paquete</span>
+          <span class="green">Solo $18.99</span>
+        </div>
+      </div>
+
+      <ul class="price-includes">
+        <li>Ebook PDF completo — descarga inmediata</li>
+        <li>Bono #1: Checklist de Seguimiento Diario (GRATIS)</li>
+        <li>Bono #2: Guía de Constancia y Progreso (GRATIS)</li>
+        <li>Acceso de por vida + futuras actualizaciones</li>
+        <li>Compatible con tablet, teléfono y computadora</li>
+      </ul>
+
+      <a href="#" class="btn-primary btn-gold" style="display:block; text-align:center;">
+        Sí — Accedo Ahora por $18.99
+      </a>
+      <span class="cta-guarantee" style="text-align:center; display:block; margin-top:12px;">
+        Pago seguro · Descarga inmediata · Garantía de satisfacción 30 días
+      </span>
+    </div>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     GARANTÍA
+══════════════════════════════════════ -->
+<section class="garantia">
+  <div class="container">
+    <div class="garantia-box">
+      <div class="garantia-seal">🌿</div>
+      <h3>Garantía de Satisfacción de 30 Días</h3>
+      <p>
+        Descarga el ebook, accede a los bonos y practica el programa durante 30 días.
+        Si por cualquier razón no estás satisfecha con el contenido, escríbeme
+        un email dentro de ese plazo y te devuelvo cada centavo.
+      </p>
+      <p class="mt-16">
+        Sin formularios complicados. Sin preguntas capciosas. Sin fricción.
+      </p>
+      <p class="mt-16">
+        O estás satisfecha con tu compra, o tienes tu dinero de vuelta.
+        <strong>No existe una tercera opción.</strong>
+      </p>
+    </div>
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     FAQ
+══════════════════════════════════════ -->
+<section class="faq">
+  <div class="container">
+    <h2>Preguntas frecuentes</h2>
+
+    <div class="faq-item mt-40">
+      <p class="faq-question">"¿Funciona si tengo más de 55 años?"</p>
+      <p class="faq-answer">
+        Los músculos faciales responden al entrenamiento en cualquier etapa de la vida —
+        igual que los del cuerpo. El programa adapta la intensidad progresivamente,
+        comenzando con ejercicios básicos de activación y avanzando de forma gradual.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-question">"¿Cuánto tiempo al día necesito?"</p>
+      <p class="faq-answer">
+        10 minutos al día. Puedes hacerlo por la mañana mientras tomas el café
+        o por la noche como ritual. El ebook incluye instrucciones paso a paso
+        en cada ejercicio, sin necesidad de memorizar nada.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-question">"¿Necesito experiencia previa en yoga?"</p>
+      <p class="faq-answer">
+        Ninguna. El yoga facial no requiere flexibilidad ni conocimiento previo.
+        Las instrucciones son detalladas y visuales. Si puedes mover tu cara, puedes seguir este programa.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-question">"¿Qué formato tiene el ebook y cómo lo recibo?"</p>
+      <p class="faq-answer">
+        El ebook es un archivo PDF de alta calidad. Al completar tu compra recibes
+        acceso inmediato para descargarlo. Funciona en cualquier dispositivo:
+        tablet, teléfono móvil o computadora.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-question">"¿Y si ya compré cursos antes y no los terminé?"</p>
+      <p class="faq-answer">
+        Este ebook está estructurado en rutinas cortas de 10 minutos con un seguimiento
+        día a día. No es una biblioteca interminable — es un programa secuencial con
+        un inicio y un final claro. El checklist del Bono #1 está diseñado específicamente
+        para ayudarte a mantener la constancia.
+      </p>
+    </div>
+
+    <div class="faq-item">
+      <p class="faq-question">"¿El yoga facial reemplaza a los productos de cuidado de piel?"</p>
+      <p class="faq-answer">
+        No. El yoga facial es un complemento a tu rutina de cuidado, no un sustituto.
+        Lo que aporta es trabajo muscular — algo que ningún producto tópico puede hacer.
+        Ambas prácticas se potencian mutuamente.
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<div class="divider-leaf">✦ ✦ ✦</div>
+
+<!-- ══════════════════════════════════════
+     URGENCIA — CTA FINAL
+══════════════════════════════════════ -->
+<section class="urgencia">
+  <div class="container">
+    <h2>El precio de lanzamiento no dura para siempre</h2>
+    <p>
+      Cuando termine la oferta de lanzamiento el ebook vuelve a su precio regular de $37.
+      Accede hoy por $18.99 y llévate los dos bonos completamente gratis.
+    </p>
+    <a href="#precio" class="btn-primary btn-gold">
+      Sí — Accedo Ahora por $18.99 con Todo Incluido
+    </a>
+    <p style="margin-top: 16px; font-size: 0.85rem; opacity: 0.7;">
+      Descarga inmediata · Garantía de satisfacción 30 días · Pago seguro
+    </p>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     CREADORA
+══════════════════════════════════════ -->
+<section class="creador">
+  <div class="container">
+    <div class="creador-inner">
+      <div class="creador-photo">🌿</div>
+      <div class="creador-bio">
+        <p class="title">Tu guía en este viaje</p>
+        <h3>Elena Voss — Especialista en Bienestar Facial y Medicina Natural</h3>
+        <p>
+          Llevo 12 años estudiando la conexión entre el movimiento consciente
+          y la salud de la piel. Formada en técnicas de yoga facial en París
+          y en fitoterapia aplicada al cuidado dérmico, he acompañado a más
+          de 3,000 mujeres en su práctica de cuidado facial natural.
+        </p>
+        <p>
+          Creé Skin Glow Botánica porque me cansé de ver a mujeres gastar fortunas
+          en soluciones que solo tocan la superficie. El trabajo real viene desde
+          dentro — y 10 minutos al día son suficientes para empezar.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ══════════════════════════════════════
+     P.S.
+══════════════════════════════════════ -->
+<section class="ps">
+  <div class="container">
+    <p>
+      P.S. — Si llegaste hasta aquí, una parte de ti ya sabe que es hora de
+      probar algo diferente. <strong>El yoga facial es una práctica respaldada</strong> que miles de mujeres
+      incorporan a su rutina diaria. Por $18.99 con garantía total de 30 días,
+      la única decisión es si empiezas hoy o lo pospones.
+      <br/><br/>
+      Tu rostro tiene mucho más que ofrecer. Dale la práctica que merece.
+    </p>
+    <div class="mt-24 text-center">
+      <a href="#precio" class="btn-primary">
+        Acceder Ahora — $18.99 con Garantía Completa
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer>
+  <p>© 2026 Skin Glow Botánica · Todos los derechos reservados</p>
+  <p style="margin-top:8px;">
+    <a href="#">Política de Privacidad</a> &nbsp;·&nbsp;
+    <a href="#">Términos y Condiciones</a> &nbsp;·&nbsp;
+    <a href="#">Contacto</a>
+  </p>
+  <p style="margin-top:12px; font-size:0.75rem; opacity:0.45;">
+    Este ebook es un producto educativo de carácter informativo. Los resultados individuales varían y dependen de múltiples factores.
+    Este producto no pretende diagnosticar, tratar ni curar ninguna condición médica.
+    Consulta a un profesional de la salud si tienes dudas sobre tu caso particular.
+  </p>
+</footer>
+
+<script>
+  // Fallback: solo si la imagen falla al cargar → círculo con iniciales
+  function initFallback(img) {
+    img.addEventListener('error', function() {
+      var initials = (img.alt || 'XX').split(' ').map(function(w){ return w[0]; }).join('').slice(0,2).toUpperCase();
+      var div = document.createElement('div');
+      div.className = 'testimonial-avatar-fallback';
+      div.textContent = initials;
+      img.parentNode.replaceChild(div, img);
+    });
+  }
+  document.querySelectorAll('.testimonial-photo').forEach(initFallback);
+</script>
+</body>
+</html>

@@ -53,6 +53,7 @@
       color: #2D2A25;
       line-height: 1.7;
       font-size: 16px;
+      padding-bottom: 80px; /* espacio para sticky CTA */
     }
 
     /* ── Typography ── */
@@ -97,7 +98,7 @@
     /* ── HERO ── */
     .hero {
       background: linear-gradient(160deg, #EEF4EE 0%, #FDFAF5 55%, #F9F0E0 100%);
-      padding: 72px 0 64px;
+      padding: 48px 0 56px;
       position: relative;
       overflow: hidden;
     }
@@ -115,20 +116,13 @@
       background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
       pointer-events: none;
     }
-    /* Two-column hero layout */
+    /* Centered single-column hero */
     .hero-inner {
-      display: grid;
-      grid-template-columns: 1fr auto;
-      gap: 56px;
+      display: flex;
+      flex-direction: column;
       align-items: center;
-    }
-    @media (max-width: 820px) {
-      .hero-inner {
-        grid-template-columns: 1fr;
-        text-align: center;
-      }
-      .hero-mockup-col { display: flex; justify-content: center; }
-      .hero-social { justify-content: center; }
+      text-align: center;
+      gap: 0;
     }
     .hero-badge {
       display: inline-block;
@@ -139,22 +133,27 @@
       text-transform: uppercase;
       padding: 6px 18px;
       border-radius: 100px;
-      margin-bottom: 24px;
+      margin-bottom: 20px;
       font-weight: 500;
     }
-    .hero-content h1 { color: var(--bark); max-width: 580px; margin: 0 0 20px; }
+    .hero-content { width: 100%; }
+    .hero-content h1 {
+      color: var(--bark);
+      max-width: 640px;
+      margin: 0 auto 18px;
+    }
     .hero-content h1 span { color: var(--sage-dark); }
     .hero-sub {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.25rem;
+      font-size: 1.2rem;
       color: var(--text-soft);
-      max-width: 500px;
-      margin: 0 0 32px;
+      max-width: 520px;
+      margin: 0 auto 20px;
     }
     .hero-social {
-      display: flex; align-items: center;
-      gap: 12px; margin-bottom: 32px;
+      display: flex; align-items: center; justify-content: center;
+      gap: 12px; margin-bottom: 28px;
     }
     .hero-avatars { display: flex; }
     .hero-avatars span {
@@ -169,13 +168,56 @@
     .hero-social p { font-size: 0.88rem; color: var(--text-soft); }
     .hero-social strong { color: var(--sage-dark); }
 
-    /* Hero mockup column — tablet más compacto */
-    .hero-mockup-col .tablet-wrap {
-      filter: drop-shadow(0 32px 64px rgba(0,0,0,0.25));
+    /* Hero mockup — centrado debajo del título */
+    .hero-mockup {
+      margin: 28px auto 28px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
-    .hero-mockup-col .tablet {
-      width: 300px;
-      height: 420px;
+    .hero-mockup .tablet-wrap {
+      filter: drop-shadow(0 28px 56px rgba(0,0,0,0.28));
+    }
+    .hero-mockup .tablet {
+      width: clamp(240px, 72vw, 340px);
+      height: clamp(340px, 102vw, 480px);
+    }
+
+    /* ── Sticky CTA Bar ── */
+    .sticky-cta {
+      position: fixed;
+      bottom: 0; left: 0; right: 0;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(12px);
+      -webkit-backdrop-filter: blur(12px);
+      border-top: 1px solid rgba(122,158,126,0.25);
+      padding: 12px 20px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 16px;
+      z-index: 1000;
+      transform: translateY(100%);
+      transition: transform 0.35s cubic-bezier(0.4,0,0.2,1);
+      box-shadow: 0 -4px 24px rgba(0,0,0,0.1);
+    }
+    .sticky-cta.visible { transform: translateY(0); }
+    .sticky-cta-price {
+      font-size: 0.9rem;
+      color: var(--text-soft);
+      white-space: nowrap;
+    }
+    .sticky-cta-price s { color: #bbb; }
+    .sticky-cta-price strong { color: var(--sage-dark); font-size: 1.15rem; }
+    .sticky-cta .btn-primary {
+      font-size: 0.92rem;
+      padding: 13px 28px;
+      white-space: nowrap;
+    }
+    @media (max-width: 480px) {
+      .sticky-cta { gap: 10px; padding: 10px 14px; }
+      .sticky-cta-price { font-size: 0.8rem; }
+      .sticky-cta .btn-primary { font-size: 0.83rem; padding: 11px 18px; }
     }
 
     /* ── Divider ── */
@@ -286,8 +328,8 @@
       border-radius: 16px;
       overflow: hidden;
       background:
-        linear-gradient(160deg, rgba(25,55,30,0.78) 0%, rgba(45,82,50,0.68) 45%, rgba(70,110,75,0.60) 100%),
-        url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=420&q=85') center/cover no-repeat;
+        linear-gradient(160deg, rgba(20,48,26,0.72) 0%, rgba(40,75,46,0.62) 45%, rgba(65,105,70,0.52) 100%),
+        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=420&q=85') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -738,16 +780,16 @@
 </div>
 
 <!-- ══════════════════════════════════════
-     HERO — dos columnas: texto + mockup tablet
+     HERO — columna centrada: badge → título → mockup → CTA
 ══════════════════════════════════════ -->
 <section class="hero">
-  <div class="container--wide">
+  <div class="container">
     <div class="hero-inner">
 
-      <!-- Columna izquierda: copy -->
-      <div class="hero-content">
-        <span class="hero-badge">Ebook Digital · Yoga Facial · Método Botánico</span>
+      <span class="hero-badge">Ebook Digital · Yoga Facial · Método Botánico</span>
 
+      <!-- Título -->
+      <div class="hero-content">
         <h1>
           El Yoga Facial que Devuelve <span>Firmeza y Luminosidad</span>
           a Tu Rostro — Sin Cremas Caras ni Procedimientos
@@ -764,15 +806,10 @@
           </div>
           <p><strong>+1,200 mujeres</strong> ya practican este método</p>
         </div>
-
-        <a href="https://pay.hotmart.com/E105004247B?checkoutMode=10" target="_blank" rel="noopener" class="btn-primary" onclick="fbq('track','InitiateCheckout')">
-          Sí — Quiero Empezar Mi Práctica de Yoga Facial
-        </a>
-        <span class="cta-guarantee">Acceso inmediato · $18.99 · Garantía de satisfacción 30 días</span>
       </div>
 
-      <!-- Columna derecha: mockup tablet -->
-      <div class="hero-mockup-col">
+      <!-- Mockup tablet centrado -->
+      <div class="hero-mockup">
         <div class="tablet-wrap">
           <div class="tablet">
             <div class="tablet-btn-vol"></div>
@@ -780,16 +817,22 @@
             <div class="tablet-screen">
               <span class="ebook-badge">Guía Digital · PDF</span>
               <div class="ebook-leaf">🌿</div>
-              <div class="ebook-title" style="font-size:1.25rem; line-height:1.25; max-width:220px;">
+              <div class="ebook-title" style="font-size:1.15rem; line-height:1.25; max-width:220px;">
                 Yoga Facial para un Rostro Firme, Tonificado y Luminoso
               </div>
             </div>
           </div>
         </div>
-        <p style="text-align:center; font-size:0.8rem; color:var(--text-soft); margin-top:16px;">
+        <p style="text-align:center; font-size:0.78rem; color:var(--text-soft); margin-top:12px;">
           Descarga inmediata · PDF · Todos los dispositivos
         </p>
       </div>
+
+      <!-- CTA -->
+      <a href="https://pay.hotmart.com/E105004247B?checkoutMode=10" target="_blank" rel="noopener" class="btn-primary" onclick="fbq('track','InitiateCheckout')">
+        Sí — Quiero Empezar Mi Práctica de Yoga Facial
+      </a>
+      <span class="cta-guarantee">Acceso inmediato · $18.99 · Garantía de satisfacción 30 días</span>
 
     </div>
   </div>
@@ -1468,6 +1511,26 @@
     });
   }
   document.querySelectorAll('.testimonial-photo').forEach(initFallback);
+
+  // Sticky CTA — aparece al salir del hero
+  (function() {
+    var hero = document.querySelector('.hero');
+    var bar  = document.getElementById('stickyCta');
+    if (!hero || !bar) return;
+    var obs = new IntersectionObserver(function(entries) {
+      bar.classList.toggle('visible', !entries[0].isIntersecting);
+    }, { threshold: 0 });
+    obs.observe(hero);
+  })();
 </script>
+
+<!-- Sticky CTA bar -->
+<div class="sticky-cta" id="stickyCta">
+  <span class="sticky-cta-price"><s>$37</s> &nbsp;<strong>$18.99</strong></span>
+  <a href="https://pay.hotmart.com/E105004247B?checkoutMode=10" target="_blank" rel="noopener"
+     class="btn-primary" onclick="fbq('track','InitiateCheckout')">
+    Sí — Quiero Empezar Ahora
+  </a>
+</div>
 </body>
 </html>

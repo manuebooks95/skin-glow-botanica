@@ -285,7 +285,9 @@
       flex: 1;
       border-radius: 16px;
       overflow: hidden;
-      background: linear-gradient(150deg, #2D5230 0%, #4E7253 35%, #7A9E7E 70%, #C8DCCA 100%);
+      background:
+        linear-gradient(160deg, rgba(25,55,30,0.78) 0%, rgba(45,82,50,0.68) 45%, rgba(70,110,75,0.60) 100%),
+        url('https://images.unsplash.com/photo-1616394584738-fc6e612e71b9?w=420&q=85') center/cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -293,34 +295,41 @@
       padding: 28px 24px;
       position: relative;
     }
-    /* Decorative circles on screen */
+    /* Soft vignette bottom */
     .tablet-screen::before {
       content: '';
       position: absolute;
-      top: -30px; right: -30px;
-      width: 130px; height: 130px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.07);
+      inset: 0;
+      background: radial-gradient(ellipse at 50% 110%, rgba(0,0,0,0.35) 0%, transparent 65%);
+      pointer-events: none;
     }
+    /* Top fade for readability */
     .tablet-screen::after {
       content: '';
       position: absolute;
-      bottom: -20px; left: -20px;
-      width: 100px; height: 100px;
-      border-radius: 50%;
-      background: rgba(255,255,255,0.06);
+      top: 0; left: 0; right: 0;
+      height: 60px;
+      background: linear-gradient(to bottom, rgba(20,50,25,0.45), transparent);
+      pointer-events: none;
     }
     .ebook-badge {
       font-size: 0.65rem;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      color: rgba(255,255,255,0.7);
-      background: rgba(255,255,255,0.12);
+      color: rgba(255,255,255,0.85);
+      background: rgba(255,255,255,0.18);
+      backdrop-filter: blur(4px);
+      -webkit-backdrop-filter: blur(4px);
       padding: 4px 14px;
       border-radius: 100px;
       margin-bottom: 16px;
+      border: 1px solid rgba(255,255,255,0.2);
     }
-    .ebook-leaf { font-size: 2.2rem; margin-bottom: 10px; }
+    .ebook-leaf {
+      font-size: 2.2rem;
+      margin-bottom: 10px;
+      filter: drop-shadow(0 2px 6px rgba(0,0,0,0.4));
+    }
     .ebook-title {
       font-family: 'Cormorant Garamond', serif;
       font-size: 1.55rem;
@@ -329,6 +338,7 @@
       text-align: center;
       line-height: 1.2;
       margin-bottom: 8px;
+      text-shadow: 0 2px 12px rgba(0,0,0,0.55);
     }
     .ebook-subtitle {
       font-size: 0.72rem;

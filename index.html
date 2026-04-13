@@ -97,91 +97,120 @@
 
     /* ── HERO ── */
     .hero {
-      background: linear-gradient(160deg, #EEF4EE 0%, #FDFAF5 55%, #F9F0E0 100%);
-      padding: 48px 0 56px;
+      background: var(--cream);
+      padding: 0 0 40px;
       position: relative;
       overflow: hidden;
     }
-    .hero::before {
-      content: '';
-      position: absolute; top: -60px; right: -80px;
-      width: 340px; height: 340px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(122,158,126,0.15) 0%, transparent 70%);
-      pointer-events: none;
-    }
-    .hero::after {
-      content: '';
-      position: absolute; bottom: -40px; left: -60px;
-      width: 260px; height: 260px; border-radius: 50%;
-      background: radial-gradient(circle, rgba(201,168,76,0.12) 0%, transparent 70%);
-      pointer-events: none;
-    }
+
     /* Centered single-column hero */
     .hero-inner {
       display: flex;
       flex-direction: column;
       align-items: center;
       text-align: center;
-      gap: 0;
     }
+
+    /* PASO 1 — Foto hero (mujer masajeándose el rostro) */
+    .hero-photo-wrap {
+      width: 100%;
+      position: relative;
+      overflow: hidden;
+      height: clamp(260px, 48vw, 420px);
+      margin-bottom: 0;
+    }
+    .hero-photo-img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 20%;
+      display: block;
+    }
+    /* Fade suave hacia abajo para que conecte con el mockup */
+    .hero-photo-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 0; right: 0;
+      height: 80px;
+      background: linear-gradient(to bottom, transparent, var(--cream));
+    }
+
+    /* PASO 2 — Mockup centrado */
+    .hero-mockup {
+      margin: -20px auto 20px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      z-index: 2;
+    }
+    .hero-mockup .tablet-wrap {
+      filter: drop-shadow(0 20px 48px rgba(0,0,0,0.30));
+    }
+    .hero-mockup .tablet {
+      width: clamp(200px, 58vw, 310px);
+      height: clamp(280px, 82vw, 440px);
+    }
+
+    /* PASO 3 — Título (2 líneas clave) */
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(1.8rem, 6.5vw, 3.2rem);
+      color: var(--bark);
+      line-height: 1.15;
+      margin: 8px auto 6px;
+      max-width: 600px;
+      padding: 0 16px;
+    }
+    .hero-h1 span { color: var(--sage-dark); }
+
+    /* Subtítulo — debajo del fold */
+    .hero-tagline {
+      font-size: 0.92rem;
+      color: var(--text-soft);
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+      padding: 0 16px;
+    }
+
     .hero-badge {
       display: inline-block;
       background: var(--sage-light);
       color: var(--sage-dark);
-      font-size: 0.78rem;
+      font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 6px 18px;
+      padding: 5px 16px;
       border-radius: 100px;
-      margin-bottom: 20px;
+      margin: 28px 0 16px;
       font-weight: 500;
     }
-    .hero-content { width: 100%; }
-    .hero-content h1 {
-      color: var(--bark);
-      max-width: 640px;
-      margin: 0 auto 18px;
-    }
-    .hero-content h1 span { color: var(--sage-dark); }
     .hero-sub {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
-      font-size: 1.2rem;
+      font-size: 1.15rem;
       color: var(--text-soft);
-      max-width: 520px;
+      max-width: 500px;
       margin: 0 auto 20px;
+      padding: 0 16px;
     }
     .hero-social {
       display: flex; align-items: center; justify-content: center;
-      gap: 12px; margin-bottom: 28px;
+      gap: 12px; margin-bottom: 24px;
     }
     .hero-avatars { display: flex; }
     .hero-avatars span {
-      width: 36px; height: 36px; border-radius: 50%;
+      width: 34px; height: 34px; border-radius: 50%;
       border: 2px solid var(--white);
       background: var(--sage-light);
       display: flex; align-items: center; justify-content: center;
-      font-size: 0.7rem; font-weight: 600; color: var(--sage-dark);
+      font-size: 0.68rem; font-weight: 600; color: var(--sage-dark);
       margin-left: -8px;
     }
     .hero-avatars span:first-child { margin-left: 0; }
-    .hero-social p { font-size: 0.88rem; color: var(--text-soft); }
+    .hero-social p { font-size: 0.85rem; color: var(--text-soft); }
     .hero-social strong { color: var(--sage-dark); }
-
-    /* Hero mockup — centrado debajo del título */
-    .hero-mockup {
-      margin: 28px auto 28px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    .hero-mockup .tablet-wrap {
-      filter: drop-shadow(0 28px 56px rgba(0,0,0,0.28));
-    }
-    .hero-mockup .tablet {
-      width: clamp(240px, 72vw, 340px);
-      height: clamp(340px, 102vw, 480px);
-    }
 
     /* ── Sticky CTA Bar ── */
     .sticky-cta {
@@ -328,8 +357,8 @@
       border-radius: 16px;
       overflow: hidden;
       background:
-        linear-gradient(160deg, rgba(20,48,26,0.72) 0%, rgba(40,75,46,0.62) 45%, rgba(65,105,70,0.52) 100%),
-        url('https://images.unsplash.com/photo-1570172619644-dfd03ed5d881?w=420&q=85') center/cover no-repeat;
+        linear-gradient(160deg, rgba(20,48,26,0.68) 0%, rgba(40,75,46,0.58) 45%, rgba(65,105,70,0.48) 100%),
+        url('foto-mockup.jpg') center 20%/cover no-repeat;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -780,61 +809,72 @@
 </div>
 
 <!-- ══════════════════════════════════════
-     HERO — columna centrada: badge → título → mockup → CTA
+     HERO — above the fold: foto → mockup → título → CTA
 ══════════════════════════════════════ -->
 <section class="hero">
-  <div class="container">
-    <div class="hero-inner">
+  <div class="hero-inner">
 
-      <span class="hero-badge">Ebook Digital · Yoga Facial · Método Botánico</span>
+    <!-- PASO 1: Foto de mujer haciendo yoga facial -->
+    <div class="hero-photo-wrap">
+      <img
+        src="foto-mockup.jpg"
+        alt="Mujer ejercitando los músculos del rostro con yoga facial"
+        class="hero-photo-img"
+      />
+    </div>
 
-      <!-- Título -->
-      <div class="hero-content">
-        <h1>
-          El Yoga Facial que Devuelve <span>Firmeza y Luminosidad</span>
-          a Tu Rostro — Sin Cremas Caras ni Procedimientos
-        </h1>
-
-        <p class="hero-sub">
-          Un programa de práctica guiada de 21 días que ejercita los músculos
-          de tu cara para tonificar, definir y revitalizar tu piel desde adentro.
-        </p>
-
-        <div class="hero-social">
-          <div class="hero-avatars">
-            <span>A</span><span>M</span><span>C</span><span>S</span><span>R</span>
-          </div>
-          <p><strong>+1,200 mujeres</strong> ya practican este método</p>
-        </div>
-      </div>
-
-      <!-- Mockup tablet centrado -->
-      <div class="hero-mockup">
-        <div class="tablet-wrap">
-          <div class="tablet">
-            <div class="tablet-btn-vol"></div>
-            <div class="tablet-btn-power"></div>
-            <div class="tablet-screen">
-              <span class="ebook-badge">Guía Digital · PDF</span>
-              <div class="ebook-leaf">🌿</div>
-              <div class="ebook-title" style="font-size:1.15rem; line-height:1.25; max-width:220px;">
-                Yoga Facial para un Rostro Firme, Tonificado y Luminoso
-              </div>
+    <!-- PASO 2: Mockup tablet (con la misma foto de fondo) -->
+    <div class="hero-mockup">
+      <div class="tablet-wrap">
+        <div class="tablet">
+          <div class="tablet-btn-vol"></div>
+          <div class="tablet-btn-power"></div>
+          <div class="tablet-screen">
+            <span class="ebook-badge">Guía Digital · PDF</span>
+            <div class="ebook-leaf">🌿</div>
+            <div class="ebook-title" style="font-size:1.05rem; line-height:1.25; max-width:180px;">
+              Yoga Facial para un Rostro Firme, Tonificado y Luminoso
             </div>
           </div>
         </div>
-        <p style="text-align:center; font-size:0.78rem; color:var(--text-soft); margin-top:12px;">
-          Descarga inmediata · PDF · Todos los dispositivos
-        </p>
       </div>
-
-      <!-- CTA -->
-      <a href="https://pay.hotmart.com/E105004247B?checkoutMode=10" target="_blank" rel="noopener" class="btn-primary" onclick="fbq('track','InitiateCheckout')">
-        Sí — Quiero Empezar Mi Práctica de Yoga Facial
-      </a>
-      <span class="cta-guarantee">Acceso inmediato · $18.99 · Garantía de satisfacción 30 días</span>
-
+      <p style="text-align:center; font-size:0.75rem; color:var(--text-soft); margin-top:10px;">
+        Descarga inmediata · PDF · Todos los dispositivos
+      </p>
     </div>
+
+    <!-- PASO 3: Título — 2 líneas clave -->
+    <h1 class="hero-h1">
+      El Yoga Facial que Devuelve<br>
+      <span>Firmeza y Luminosidad</span>
+    </h1>
+    <p class="hero-tagline">a Tu Rostro — Sin Cremas Caras ni Procedimientos</p>
+
+    <!-- PASO 4: CTA button -->
+    <a href="https://pay.hotmart.com/E105004247B?checkoutMode=10" target="_blank" rel="noopener"
+       class="btn-primary" onclick="fbq('track','InitiateCheckout')"
+       style="margin: 4px 16px 6px;">
+      Sí — Quiero Empezar Mi Práctica de Yoga Facial
+    </a>
+    <span class="cta-guarantee">Acceso inmediato · $18.99 · Garantía de satisfacción 30 días</span>
+
+    <!-- Debajo del fold: prueba social + badge -->
+    <div style="width:100%; padding: 0 24px;">
+      <span class="hero-badge">Ebook Digital · Yoga Facial · Método Botánico</span>
+
+      <p class="hero-sub">
+        Un programa de práctica guiada de 21 días que ejercita los músculos
+        de tu cara para tonificar, definir y revitalizar tu piel desde adentro.
+      </p>
+
+      <div class="hero-social">
+        <div class="hero-avatars">
+          <span>A</span><span>M</span><span>C</span><span>S</span><span>R</span>
+        </div>
+        <p><strong>+1,200 mujeres</strong> ya practican este método</p>
+      </div>
+    </div>
+
   </div>
 </section>
 

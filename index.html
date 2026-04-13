@@ -97,13 +97,10 @@
 
     /* ── HERO ── */
     .hero {
-      background: var(--cream);
-      padding: 0 0 40px;
-      position: relative;
-      overflow: hidden;
+      background: linear-gradient(160deg, #EEF4EE 0%, #FDFAF5 60%, #F9F0E0 100%);
+      padding: 36px 0 40px;
     }
 
-    /* Centered single-column hero */
     .hero-inner {
       display: flex;
       flex-direction: column;
@@ -111,69 +108,7 @@
       text-align: center;
     }
 
-    /* PASO 1 — Foto hero (mujer masajeándose el rostro) */
-    .hero-photo-wrap {
-      width: 100%;
-      position: relative;
-      overflow: hidden;
-      height: clamp(260px, 48vw, 420px);
-      margin-bottom: 0;
-    }
-    .hero-photo-img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      object-position: center 20%;
-      display: block;
-    }
-    /* Fade suave hacia abajo para que conecte con el mockup */
-    .hero-photo-wrap::after {
-      content: '';
-      position: absolute;
-      bottom: 0; left: 0; right: 0;
-      height: 80px;
-      background: linear-gradient(to bottom, transparent, var(--cream));
-    }
-
-    /* PASO 2 — Mockup centrado */
-    .hero-mockup {
-      margin: -20px auto 20px;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      position: relative;
-      z-index: 2;
-    }
-    .hero-mockup .tablet-wrap {
-      filter: drop-shadow(0 20px 48px rgba(0,0,0,0.30));
-    }
-    .hero-mockup .tablet {
-      width: clamp(200px, 58vw, 310px);
-      height: clamp(280px, 82vw, 440px);
-    }
-
-    /* PASO 3 — Título (2 líneas clave) */
-    .hero-h1 {
-      font-family: 'Cormorant Garamond', serif;
-      font-weight: 600;
-      font-size: clamp(1.8rem, 6.5vw, 3.2rem);
-      color: var(--bark);
-      line-height: 1.15;
-      margin: 8px auto 6px;
-      max-width: 600px;
-      padding: 0 16px;
-    }
-    .hero-h1 span { color: var(--sage-dark); }
-
-    /* Subtítulo — debajo del fold */
-    .hero-tagline {
-      font-size: 0.92rem;
-      color: var(--text-soft);
-      letter-spacing: 0.04em;
-      margin-bottom: 20px;
-      padding: 0 16px;
-    }
-
+    /* Badge */
     .hero-badge {
       display: inline-block;
       background: var(--sage-light);
@@ -181,11 +116,48 @@
       font-size: 0.75rem;
       letter-spacing: 0.1em;
       text-transform: uppercase;
-      padding: 5px 16px;
+      padding: 5px 18px;
       border-radius: 100px;
-      margin: 28px 0 16px;
+      margin-bottom: 18px;
       font-weight: 500;
     }
+
+    /* Título */
+    .hero-h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-weight: 600;
+      font-size: clamp(1.9rem, 6.5vw, 3.2rem);
+      color: var(--bark);
+      line-height: 1.15;
+      margin: 0 auto 8px;
+      max-width: 600px;
+      padding: 0 16px;
+    }
+    .hero-h1 span { color: var(--sage-dark); }
+
+    .hero-tagline {
+      font-size: 0.95rem;
+      color: var(--text-soft);
+      letter-spacing: 0.03em;
+      margin-bottom: 24px;
+      padding: 0 16px;
+    }
+
+    /* Mockup */
+    .hero-mockup {
+      margin: 0 auto 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    .hero-mockup .tablet-wrap {
+      filter: drop-shadow(0 20px 48px rgba(0,0,0,0.28));
+    }
+    .hero-mockup .tablet {
+      width: clamp(210px, 60vw, 320px);
+      height: clamp(295px, 85vw, 450px);
+    }
+
     .hero-sub {
       font-family: 'Cormorant Garamond', serif;
       font-style: italic;
@@ -809,72 +781,63 @@
 </div>
 
 <!-- ══════════════════════════════════════
-     HERO — above the fold: foto → mockup → título → CTA
+     HERO — above the fold: badge → título → mockup (foto adentro) → CTA
 ══════════════════════════════════════ -->
 <section class="hero">
-  <div class="hero-inner">
+  <div class="container">
+    <div class="hero-inner">
 
-    <!-- PASO 1: Foto de mujer haciendo yoga facial -->
-    <div class="hero-photo-wrap">
-      <img
-        src="foto-mockup.jpg"
-        alt="Mujer ejercitando los músculos del rostro con yoga facial"
-        class="hero-photo-img"
-      />
-    </div>
+      <!-- Badge -->
+      <span class="hero-badge">Ebook Digital · Yoga Facial · Método Botánico</span>
 
-    <!-- PASO 2: Mockup tablet (con la misma foto de fondo) -->
-    <div class="hero-mockup">
-      <div class="tablet-wrap">
-        <div class="tablet">
-          <div class="tablet-btn-vol"></div>
-          <div class="tablet-btn-power"></div>
-          <div class="tablet-screen">
-            <span class="ebook-badge">Guía Digital · PDF</span>
-            <div class="ebook-leaf">🌿</div>
-            <div class="ebook-title" style="font-size:1.05rem; line-height:1.25; max-width:180px;">
-              Yoga Facial para un Rostro Firme, Tonificado y Luminoso
+      <!-- Título principal -->
+      <h1 class="hero-h1">
+        El Yoga Facial que Devuelve<br>
+        <span>Firmeza y Luminosidad</span><br>
+        a Tu Rostro
+      </h1>
+      <p class="hero-tagline">Sin Cremas Caras ni Procedimientos</p>
+
+      <!-- Mockup tablet con foto de la mujer como fondo -->
+      <div class="hero-mockup">
+        <div class="tablet-wrap">
+          <div class="tablet">
+            <div class="tablet-btn-vol"></div>
+            <div class="tablet-btn-power"></div>
+            <div class="tablet-screen">
+              <span class="ebook-badge">Guía Digital · PDF</span>
+              <div class="ebook-leaf">🌿</div>
+              <div class="ebook-title" style="font-size:1.05rem; line-height:1.25; max-width:180px;">
+                Yoga Facial para un Rostro Firme, Tonificado y Luminoso
+              </div>
             </div>
           </div>
         </div>
+        <p style="text-align:center; font-size:0.75rem; color:var(--text-soft); margin-top:10px;">
+          Descarga inmediata · PDF · Todos los dispositivos
+        </p>
       </div>
-      <p style="text-align:center; font-size:0.75rem; color:var(--text-soft); margin-top:10px;">
-        Descarga inmediata · PDF · Todos los dispositivos
-      </p>
-    </div>
 
-    <!-- PASO 3: Título — 2 líneas clave -->
-    <h1 class="hero-h1">
-      El Yoga Facial que Devuelve<br>
-      <span>Firmeza y Luminosidad</span>
-    </h1>
-    <p class="hero-tagline">a Tu Rostro — Sin Cremas Caras ni Procedimientos</p>
+      <!-- CTA -->
+      <a id="heroCta" href="https://pay.hotmart.com/E105004247B?checkoutMode=10" target="_blank" rel="noopener"
+         class="btn-primary" onclick="fbq('track','InitiateCheckout')">
+        Sí — Quiero Empezar Mi Práctica de Yoga Facial
+      </a>
+      <span class="cta-guarantee">Acceso inmediato · $18.99 · Garantía de satisfacción 30 días</span>
 
-    <!-- PASO 4: CTA button -->
-    <a href="https://pay.hotmart.com/E105004247B?checkoutMode=10" target="_blank" rel="noopener"
-       class="btn-primary" onclick="fbq('track','InitiateCheckout')"
-       style="margin: 4px 16px 6px;">
-      Sí — Quiero Empezar Mi Práctica de Yoga Facial
-    </a>
-    <span class="cta-guarantee">Acceso inmediato · $18.99 · Garantía de satisfacción 30 días</span>
-
-    <!-- Debajo del fold: prueba social + badge -->
-    <div style="width:100%; padding: 0 24px;">
-      <span class="hero-badge">Ebook Digital · Yoga Facial · Método Botánico</span>
-
-      <p class="hero-sub">
+      <!-- Debajo del fold: subtítulo y prueba social -->
+      <p class="hero-sub" style="margin-top:32px;">
         Un programa de práctica guiada de 21 días que ejercita los músculos
         de tu cara para tonificar, definir y revitalizar tu piel desde adentro.
       </p>
-
       <div class="hero-social">
         <div class="hero-avatars">
           <span>A</span><span>M</span><span>C</span><span>S</span><span>R</span>
         </div>
         <p><strong>+1,200 mujeres</strong> ya practican este método</p>
       </div>
-    </div>
 
+    </div>
   </div>
 </section>
 
@@ -1552,15 +1515,23 @@
   }
   document.querySelectorAll('.testimonial-photo').forEach(initFallback);
 
-  // Sticky CTA — aparece al salir del hero
+  // Sticky CTA — aparece cuando el botón CTA del hero sale de pantalla
   (function() {
-    var hero = document.querySelector('.hero');
-    var bar  = document.getElementById('stickyCta');
-    if (!hero || !bar) return;
-    var obs = new IntersectionObserver(function(entries) {
-      bar.classList.toggle('visible', !entries[0].isIntersecting);
-    }, { threshold: 0 });
-    obs.observe(hero);
+    var bar     = document.getElementById('stickyCta');
+    var heroCta = document.getElementById('heroCta');
+    if (!bar) return;
+
+    function update() {
+      if (heroCta) {
+        var rect = heroCta.getBoundingClientRect();
+        bar.classList.toggle('visible', rect.bottom < 0);
+      } else {
+        bar.classList.toggle('visible', window.scrollY > 350);
+      }
+    }
+
+    window.addEventListener('scroll', update, { passive: true });
+    update();
   })();
 </script>
 
